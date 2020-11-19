@@ -1,6 +1,19 @@
 const Discord = require("discord.js");
 const bot = new Discord.Client();
-const { token } = require("./config.json");
+// const { token } = require("./config.json");
+require("dotenv-flow").config();
+
+const config = {
+	token: process.env.TOKEN,
+	owner: process.env.OWNER,
+	prefix: process.env.PREFIX
+};
+
+console.log(config.token);
+
+bot.on("ready", () => {
+	console.log(`Logged in as ${bot.user.tag}!`);
+});
 
 // const token = process.env.TOKEN;
 
@@ -34,4 +47,5 @@ bot.on("message", message => {
 	// }
 });
 
-bot.login(token);
+// bot.login(token);
+bot.login(config.token);
