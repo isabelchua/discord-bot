@@ -37,10 +37,15 @@ bot.on("message", message => {
 			break;
 		case "info":
 			if (args[1] === "version") {
-				message.channel.send(version);
+				message.channel.send("version " + version);
 			} else {
 				message.channel.send("Invalid Command");
 			}
+		case "clear":
+			if (!args[1])
+				return message.reply("Error please define second argument");
+			message.channel.bulkDelete(args[1]);
+			break;
 	}
 	// if (msg.content === "hello") {
 	// 	msg.reply("Hello friend!");
