@@ -33,7 +33,7 @@ bot.on("message", message => {
 			message.channel.send("pong!");
 			break;
 		case "website":
-			message.channel.send("youtube.com");
+			message.channel.send("https://www.facebook.com/pinkchocobo");
 			break;
 		case "info":
 			if (args[1] === "version") {
