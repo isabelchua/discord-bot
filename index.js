@@ -9,7 +9,7 @@ const config = {
 	prefix: process.env.PREFIX
 };
 
-console.log(config.token);
+//console.log(config.token);
 
 bot.on("ready", () => {
 	console.log(`Logged in as ${bot.user.tag}!`);
